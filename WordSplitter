@@ -1,0 +1,50 @@
+// Angel Guerra (angel.guerra@malad.us)
+// For CTE Software Development 2
+// Instructor: Mr. Gross
+
+import java.util.Scanner;
+
+public class WordSplitter {
+    public static void main(String[] args) {
+        // Hard-coded string
+        String testString = "the quick Brown Fox Jumped over the lazy dog";
+        
+        // This will remove commas and periods (simple punctuation removal)
+        testString = testString.replace(",", "").replace(".", "");
+        
+        // Will split by spaces
+        String[] words = testString.split(" ");
+        
+        // will print each word on a separate line
+        System.out.println("Hard-coded string words:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+        
+        // Print word count
+        System.out.println("Total words: " + words.length);
+        System.out.println();
+        
+        // will ask the user for input
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a line of text:");
+        String userInput = scanner.nextLine();
+        
+        // remove the punctuation
+        userInput = userInput.replace(",", "").replace(".", "");
+        
+        // Split by spaces
+        String[] userWords = userInput.split(" ");
+        
+        // Print each word
+        System.out.println("Your words:");
+        for (String word : userWords) {
+            System.out.println(word);
+        }
+        
+        // Print word count
+        System.out.println("Total words: " + userWords.length);
+        
+        scanner.close();
+    }
+}
